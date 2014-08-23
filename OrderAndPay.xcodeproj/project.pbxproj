@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACD0BDCB19A8CE69003CC577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCA19A8CE69003CC577 /* Foundation.framework */; };
+		ACD0BDCD19A8CE69003CC577 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCC19A8CE69003CC577 /* CoreGraphics.framework */; };
+		ACD0BDCF19A8CE69003CC577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCE19A8CE69003CC577 /* UIKit.framework */; };
+		ACD0BDD519A8CE69003CC577 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACD0BDD319A8CE69003CC577 /* InfoPlist.strings */; };
+		ACD0BDD719A8CE69003CC577 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BDD619A8CE69003CC577 /* main.m */; };
+		ACD0BDDB19A8CE69003CC577 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BDDA19A8CE69003CC577 /* AppDelegate.m */; };
+		ACD0BDDE19A8CE69003CC577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD0BDDC19A8CE69003CC577 /* Main.storyboard */; };
+		ACD0BDE119A8CE69003CC577 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BDE019A8CE69003CC577 /* ViewController.m */; };
+		ACD0BDE319A8CE69003CC577 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD0BDE219A8CE69003CC577 /* Images.xcassets */; };
+		ACD0BDEA19A8CE69003CC577 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDE919A8CE69003CC577 /* XCTest.framework */; };
+		ACD0BDEB19A8CE69003CC577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCA19A8CE69003CC577 /* Foundation.framework */; };
+		ACD0BDEC19A8CE69003CC577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCE19A8CE69003CC577 /* UIKit.framework */; };
+		ACD0BDF419A8CE69003CC577 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACD0BDF219A8CE69003CC577 /* InfoPlist.strings */; };
+		ACD0BDF619A8CE69003CC577 /* OrderAndPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BDF519A8CE69003CC577 /* OrderAndPayTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACD0BDED19A8CE69003CC577 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACD0BDBF19A8CE69003CC577 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACD0BDC619A8CE69003CC577;
+			remoteInfo = OrderAndPay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACD0BDC719A8CE69003CC577 /* OrderAndPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderAndPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD0BDCA19A8CE69003CC577 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ACD0BDCC19A8CE69003CC577 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ACD0BDCE19A8CE69003CC577 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ACD0BDD219A8CE69003CC577 /* OrderAndPay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrderAndPay-Info.plist"; sourceTree = "<group>"; };
+		ACD0BDD419A8CE69003CC577 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ACD0BDD619A8CE69003CC577 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ACD0BDD819A8CE69003CC577 /* OrderAndPay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderAndPay-Prefix.pch"; sourceTree = "<group>"; };
+		ACD0BDD919A8CE69003CC577 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ACD0BDDA19A8CE69003CC577 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ACD0BDDD19A8CE69003CC577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACD0BDDF19A8CE69003CC577 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ACD0BDE019A8CE69003CC577 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ACD0BDE219A8CE69003CC577 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ACD0BDE819A8CE69003CC577 /* OrderAndPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAndPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD0BDE919A8CE69003CC577 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		ACD0BDF119A8CE69003CC577 /* OrderAndPayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrderAndPayTests-Info.plist"; sourceTree = "<group>"; };
+		ACD0BDF319A8CE69003CC577 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ACD0BDF519A8CE69003CC577 /* OrderAndPayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderAndPayTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACD0BDC419A8CE69003CC577 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD0BDCD19A8CE69003CC577 /* CoreGraphics.framework in Frameworks */,
+				ACD0BDCF19A8CE69003CC577 /* UIKit.framework in Frameworks */,
+				ACD0BDCB19A8CE69003CC577 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD0BDE519A8CE69003CC577 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD0BDEA19A8CE69003CC577 /* XCTest.framework in Frameworks */,
+				ACD0BDEC19A8CE69003CC577 /* UIKit.framework in Frameworks */,
+				ACD0BDEB19A8CE69003CC577 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACD0BDBE19A8CE69003CC577 = {
+			isa = PBXGroup;
+			children = (
+				ACD0BDD019A8CE69003CC577 /* OrderAndPay */,
+				ACD0BDEF19A8CE69003CC577 /* OrderAndPayTests */,
+				ACD0BDC919A8CE69003CC577 /* Frameworks */,
+				ACD0BDC819A8CE69003CC577 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACD0BDC819A8CE69003CC577 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACD0BDC719A8CE69003CC577 /* OrderAndPay.app */,
+				ACD0BDE819A8CE69003CC577 /* OrderAndPayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACD0BDC919A8CE69003CC577 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACD0BDCA19A8CE69003CC577 /* Foundation.framework */,
+				ACD0BDCC19A8CE69003CC577 /* CoreGraphics.framework */,
+				ACD0BDCE19A8CE69003CC577 /* UIKit.framework */,
+				ACD0BDE919A8CE69003CC577 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACD0BDD019A8CE69003CC577 /* OrderAndPay */ = {
+			isa = PBXGroup;
+			children = (
+				ACD0BDD919A8CE69003CC577 /* AppDelegate.h */,
+				ACD0BDDA19A8CE69003CC577 /* AppDelegate.m */,
+				ACD0BDDC19A8CE69003CC577 /* Main.storyboard */,
+				ACD0BDDF19A8CE69003CC577 /* ViewController.h */,
+				ACD0BDE019A8CE69003CC577 /* ViewController.m */,
+				ACD0BDE219A8CE69003CC577 /* Images.xcassets */,
+				ACD0BDD119A8CE69003CC577 /* Supporting Files */,
+			);
+			path = OrderAndPay;
+			sourceTree = "<group>";
+		};
+		ACD0BDD119A8CE69003CC577 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACD0BDD219A8CE69003CC577 /* OrderAndPay-Info.plist */,
+				ACD0BDD319A8CE69003CC577 /* InfoPlist.strings */,
+				ACD0BDD619A8CE69003CC577 /* main.m */,
+				ACD0BDD819A8CE69003CC577 /* OrderAndPay-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACD0BDEF19A8CE69003CC577 /* OrderAndPayTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACD0BDF519A8CE69003CC577 /* OrderAndPayTests.m */,
+				ACD0BDF019A8CE69003CC577 /* Supporting Files */,
+			);
+			path = OrderAndPayTests;
+			sourceTree = "<group>";
+		};
+		ACD0BDF019A8CE69003CC577 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACD0BDF119A8CE69003CC577 /* OrderAndPayTests-Info.plist */,
+				ACD0BDF219A8CE69003CC577 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACD0BDC619A8CE69003CC577 /* OrderAndPay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACD0BDF919A8CE69003CC577 /* Build configuration list for PBXNativeTarget "OrderAndPay" */;
+			buildPhases = (
+				ACD0BDC319A8CE69003CC577 /* Sources */,
+				ACD0BDC419A8CE69003CC577 /* Frameworks */,
+				ACD0BDC519A8CE69003CC577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrderAndPay;
+			productName = OrderAndPay;
+			productReference = ACD0BDC719A8CE69003CC577 /* OrderAndPay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACD0BDE719A8CE69003CC577 /* OrderAndPayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACD0BDFC19A8CE69003CC577 /* Build configuration list for PBXNativeTarget "OrderAndPayTests" */;
+			buildPhases = (
+				ACD0BDE419A8CE69003CC577 /* Sources */,
+				ACD0BDE519A8CE69003CC577 /* Frameworks */,
+				ACD0BDE619A8CE69003CC577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACD0BDEE19A8CE69003CC577 /* PBXTargetDependency */,
+			);
+			name = OrderAndPayTests;
+			productName = OrderAndPayTests;
+			productReference = ACD0BDE819A8CE69003CC577 /* OrderAndPayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACD0BDBF19A8CE69003CC577 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Marco Denisi";
+				TargetAttributes = {
+					ACD0BDE719A8CE69003CC577 = {
+						TestTargetID = ACD0BDC619A8CE69003CC577;
+					};
+				};
+			};
+			buildConfigurationList = ACD0BDC219A8CE69003CC577 /* Build configuration list for PBXProject "OrderAndPay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACD0BDBE19A8CE69003CC577;
+			productRefGroup = ACD0BDC819A8CE69003CC577 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACD0BDC619A8CE69003CC577 /* OrderAndPay */,
+				ACD0BDE719A8CE69003CC577 /* OrderAndPayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACD0BDC519A8CE69003CC577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD0BDE319A8CE69003CC577 /* Images.xcassets in Resources */,
+				ACD0BDD519A8CE69003CC577 /* InfoPlist.strings in Resources */,
+				ACD0BDDE19A8CE69003CC577 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD0BDE619A8CE69003CC577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD0BDF419A8CE69003CC577 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACD0BDC319A8CE69003CC577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD0BDE119A8CE69003CC577 /* ViewController.m in Sources */,
+				ACD0BDDB19A8CE69003CC577 /* AppDelegate.m in Sources */,
+				ACD0BDD719A8CE69003CC577 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD0BDE419A8CE69003CC577 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD0BDF619A8CE69003CC577 /* OrderAndPayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACD0BDEE19A8CE69003CC577 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACD0BDC619A8CE69003CC577 /* OrderAndPay */;
+			targetProxy = ACD0BDED19A8CE69003CC577 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ACD0BDD319A8CE69003CC577 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACD0BDD419A8CE69003CC577 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ACD0BDDC19A8CE69003CC577 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACD0BDDD19A8CE69003CC577 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ACD0BDF219A8CE69003CC577 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACD0BDF319A8CE69003CC577 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACD0BDF719A8CE69003CC577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ACD0BDF819A8CE69003CC577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACD0BDFA19A8CE69003CC577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrderAndPay/OrderAndPay-Prefix.pch";
+				INFOPLIST_FILE = "OrderAndPay/OrderAndPay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ACD0BDFB19A8CE69003CC577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrderAndPay/OrderAndPay-Prefix.pch";
+				INFOPLIST_FILE = "OrderAndPay/OrderAndPay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		ACD0BDFD19A8CE69003CC577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OrderAndPay.app/OrderAndPay";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrderAndPay/OrderAndPay-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OrderAndPayTests/OrderAndPayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		ACD0BDFE19A8CE69003CC577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OrderAndPay.app/OrderAndPay";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrderAndPay/OrderAndPay-Prefix.pch";
+				INFOPLIST_FILE = "OrderAndPayTests/OrderAndPayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACD0BDC219A8CE69003CC577 /* Build configuration list for PBXProject "OrderAndPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD0BDF719A8CE69003CC577 /* Debug */,
+				ACD0BDF819A8CE69003CC577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACD0BDF919A8CE69003CC577 /* Build configuration list for PBXNativeTarget "OrderAndPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD0BDFA19A8CE69003CC577 /* Debug */,
+				ACD0BDFB19A8CE69003CC577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ACD0BDFC19A8CE69003CC577 /* Build configuration list for PBXNativeTarget "OrderAndPayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD0BDFD19A8CE69003CC577 /* Debug */,
+				ACD0BDFE19A8CE69003CC577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACD0BDBF19A8CE69003CC577 /* Project object */;
+}
