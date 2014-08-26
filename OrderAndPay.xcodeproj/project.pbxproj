@@ -14,13 +14,19 @@
 		ACD0BDD719A8CE69003CC577 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BDD619A8CE69003CC577 /* main.m */; };
 		ACD0BDDB19A8CE69003CC577 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BDDA19A8CE69003CC577 /* AppDelegate.m */; };
 		ACD0BDDE19A8CE69003CC577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD0BDDC19A8CE69003CC577 /* Main.storyboard */; };
-		ACD0BDE119A8CE69003CC577 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BDE019A8CE69003CC577 /* ViewController.m */; };
 		ACD0BDE319A8CE69003CC577 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD0BDE219A8CE69003CC577 /* Images.xcassets */; };
 		ACD0BDEA19A8CE69003CC577 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDE919A8CE69003CC577 /* XCTest.framework */; };
 		ACD0BDEB19A8CE69003CC577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCA19A8CE69003CC577 /* Foundation.framework */; };
 		ACD0BDEC19A8CE69003CC577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCE19A8CE69003CC577 /* UIKit.framework */; };
 		ACD0BDF419A8CE69003CC577 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACD0BDF219A8CE69003CC577 /* InfoPlist.strings */; };
 		ACD0BDF619A8CE69003CC577 /* OrderAndPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BDF519A8CE69003CC577 /* OrderAndPayTests.m */; };
+		ACD0BE0219A8CEDA003CC577 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BE0119A8CEDA003CC577 /* Product.m */; };
+		ACD0BE0C19A8E21B003CC577 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BE0B19A8E21B003CC577 /* ProductsViewController.m */; };
+		ACD0BE0F19A8E560003CC577 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BE0E19A8E560003CC577 /* ProductCell.m */; };
+		ACD0BE1219A8E874003CC577 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD0BE1119A8E874003CC577 /* ProductDetailViewController.m */; };
+		ACD7A02019AC8EB3004EECB5 /* MultipeerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD7A01F19AC8EB3004EECB5 /* MultipeerHandler.m */; };
+		ACD7A02919AC9492004EECB5 /* home78.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7A02719AC9492004EECB5 /* home78.png */; };
+		ACD7A02A19AC9492004EECB5 /* shopping2.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7A02819AC9492004EECB5 /* shopping2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +51,24 @@
 		ACD0BDD919A8CE69003CC577 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ACD0BDDA19A8CE69003CC577 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ACD0BDDD19A8CE69003CC577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ACD0BDDF19A8CE69003CC577 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ACD0BDE019A8CE69003CC577 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ACD0BDE219A8CE69003CC577 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACD0BDE819A8CE69003CC577 /* OrderAndPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAndPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD0BDE919A8CE69003CC577 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		ACD0BDF119A8CE69003CC577 /* OrderAndPayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrderAndPayTests-Info.plist"; sourceTree = "<group>"; };
 		ACD0BDF319A8CE69003CC577 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ACD0BDF519A8CE69003CC577 /* OrderAndPayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderAndPayTests.m; sourceTree = "<group>"; };
+		ACD0BE0019A8CEDA003CC577 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		ACD0BE0119A8CEDA003CC577 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		ACD0BE0A19A8E21B003CC577 /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		ACD0BE0B19A8E21B003CC577 /* ProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
+		ACD0BE0D19A8E560003CC577 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		ACD0BE0E19A8E560003CC577 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		ACD0BE1019A8E874003CC577 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductDetailViewController.h; path = ../ProductDetailViewController.h; sourceTree = "<group>"; };
+		ACD0BE1119A8E874003CC577 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductDetailViewController.m; path = ../ProductDetailViewController.m; sourceTree = "<group>"; };
+		ACD7A01E19AC8EB3004EECB5 /* MultipeerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerHandler.h; sourceTree = "<group>"; };
+		ACD7A01F19AC8EB3004EECB5 /* MultipeerHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerHandler.m; sourceTree = "<group>"; };
+		ACD7A02719AC9492004EECB5 /* home78.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home78.png; sourceTree = "<group>"; };
+		ACD7A02819AC9492004EECB5 /* shopping2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shopping2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +128,20 @@
 		ACD0BDD019A8CE69003CC577 /* OrderAndPay */ = {
 			isa = PBXGroup;
 			children = (
+				ACD7A02619AC9492004EECB5 /* icon */,
+				ACD7A01D19AC8E97004EECB5 /* Multipeer Handler */,
+				ACD0BDFF19A8CE83003CC577 /* Model */,
 				ACD0BDD919A8CE69003CC577 /* AppDelegate.h */,
 				ACD0BDDA19A8CE69003CC577 /* AppDelegate.m */,
 				ACD0BDDC19A8CE69003CC577 /* Main.storyboard */,
-				ACD0BDDF19A8CE69003CC577 /* ViewController.h */,
-				ACD0BDE019A8CE69003CC577 /* ViewController.m */,
 				ACD0BDE219A8CE69003CC577 /* Images.xcassets */,
 				ACD0BDD119A8CE69003CC577 /* Supporting Files */,
+				ACD0BE0A19A8E21B003CC577 /* ProductsViewController.h */,
+				ACD0BE0B19A8E21B003CC577 /* ProductsViewController.m */,
+				ACD0BE1019A8E874003CC577 /* ProductDetailViewController.h */,
+				ACD0BE1119A8E874003CC577 /* ProductDetailViewController.m */,
+				ACD0BE0D19A8E560003CC577 /* ProductCell.h */,
+				ACD0BE0E19A8E560003CC577 /* ProductCell.m */,
 			);
 			path = OrderAndPay;
 			sourceTree = "<group>";
@@ -150,6 +173,33 @@
 				ACD0BDF219A8CE69003CC577 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACD0BDFF19A8CE83003CC577 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACD0BE0019A8CEDA003CC577 /* Product.h */,
+				ACD0BE0119A8CEDA003CC577 /* Product.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ACD7A01D19AC8E97004EECB5 /* Multipeer Handler */ = {
+			isa = PBXGroup;
+			children = (
+				ACD7A01E19AC8EB3004EECB5 /* MultipeerHandler.h */,
+				ACD7A01F19AC8EB3004EECB5 /* MultipeerHandler.m */,
+			);
+			name = "Multipeer Handler";
+			sourceTree = "<group>";
+		};
+		ACD7A02619AC9492004EECB5 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				ACD7A02719AC9492004EECB5 /* home78.png */,
+				ACD7A02819AC9492004EECB5 /* shopping2.png */,
+			);
+			path = icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +278,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD7A02A19AC9492004EECB5 /* shopping2.png in Resources */,
 				ACD0BDE319A8CE69003CC577 /* Images.xcassets in Resources */,
+				ACD7A02919AC9492004EECB5 /* home78.png in Resources */,
 				ACD0BDD519A8CE69003CC577 /* InfoPlist.strings in Resources */,
 				ACD0BDDE19A8CE69003CC577 /* Main.storyboard in Resources */,
 			);
@@ -249,8 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD0BDE119A8CE69003CC577 /* ViewController.m in Sources */,
+				ACD0BE0F19A8E560003CC577 /* ProductCell.m in Sources */,
+				ACD0BE0219A8CEDA003CC577 /* Product.m in Sources */,
 				ACD0BDDB19A8CE69003CC577 /* AppDelegate.m in Sources */,
+				ACD0BE1219A8E874003CC577 /* ProductDetailViewController.m in Sources */,
+				ACD7A02019AC8EB3004EECB5 /* MultipeerHandler.m in Sources */,
+				ACD0BE0C19A8E21B003CC577 /* ProductsViewController.m in Sources */,
 				ACD0BDD719A8CE69003CC577 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +512,7 @@
 				ACD0BDFB19A8CE69003CC577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACD0BDFC19A8CE69003CC577 /* Build configuration list for PBXNativeTarget "OrderAndPayTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +521,7 @@
 				ACD0BDFE19A8CE69003CC577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

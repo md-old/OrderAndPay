@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Product : NSObject
+@interface Product : NSObject <NSCoding>
+
+@property (strong, nonatomic) NSNumber *identifier;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) NSNumber *price;
+
+- (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary;
 
 @end

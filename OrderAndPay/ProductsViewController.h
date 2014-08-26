@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface ProductsViewController : UITableViewController
+@interface ProductsViewController : UITableViewController <MCBrowserViewControllerDelegate>
 
 @end

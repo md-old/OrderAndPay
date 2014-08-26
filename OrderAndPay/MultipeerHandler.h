@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface MultipeerHandler : NSObject
+extern NSString *const kServiceType;
+
+@interface MultipeerHandler : NSObject <MCSessionDelegate>
+
+@property (strong, nonatomic) MCPeerID *peerId;
+@property (strong, nonatomic) MCSession *session;
+@property (strong, nonatomic) MCBrowserViewController *browser;
+
+- (void) setupPeerWithDisplayName: (NSString*) name;
+- (void) setupSession;
+- (void) setupBrowser;
 
 @end

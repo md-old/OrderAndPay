@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.name.text = self.nameP;
+    self.description.text = self.descP;
 }
 
 - (void)didReceiveMemoryWarning

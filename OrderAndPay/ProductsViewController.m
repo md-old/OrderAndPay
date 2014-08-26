@@ -7,8 +7,14 @@
 //
 
 #import "ProductsViewController.h"
+#import "ProductDetailViewController.h"
+#import "AppDelegate.h"
+#import "ProductCell.h"
+#import "Product.h"
 
 @interface ProductsViewController ()
+
+@property (strong, nonatomic) AppDelegate *delegate;
 
 @end
 
@@ -23,15 +29,34 @@
     return self;
 }
 
+/**
+ *  Look for the POS
+ *
+ *  @param sender the id of the button
+ */
+- (IBAction)searchForPOS:(id)sender {
+    if (self.delegate.mpHandler.session != nil) {
+        [self.delegate.mpHandler setupBrowser];
+        [self.delegate.mpHandler.browser setDelegate:self];
+        
+        [self presentViewController:self.delegate.mpHandler.browser
+                           animated:YES
+                         completion:nil];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    [self.delegate.mpHandler setupPeerWithDisplayName:[UIDevice currentDevice].name];
+    [self.delegate.mpHandler setupSession];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if ([self.delegate.products count] == 0) {
+        [self.tableView reloadData];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +69,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.delegate.products count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    ProductCell *cell = (ProductCell*) [tableView dequeueReusableCellWithIdentifier:@"Product" forIndexPath:indexPath];
     
-    // Configure the cell...
+    Product *product = (Product*)[self.delegate.products objectAtIndex:indexPath.row];
+    NSMutableString *price = [[NSMutableString alloc] initWithString:[product.price stringValue]];
+    [price appendString:@" $"];
+    
+    cell.name.text = product.name;
+    cell.price.text = price;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -105,15 +133,35 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"ShowDetails"])
+    {
+        ProductDetailViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView
+                                    indexPathForSelectedRow];
+        
+        long row = [myIndexPath row];
+        
+        Product *prod = [self.delegate.products objectAtIndex:row];
+        
+        detailViewController.nameP = prod.name;
+        detailViewController.descP = prod.description;
+    }
 }
-*/
+
+#pragma mark - MCBrowserViewController Delegate
+
+- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController {
+    [self.delegate.mpHandler.browser dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController {
+    [self.delegate.mpHandler.browser dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

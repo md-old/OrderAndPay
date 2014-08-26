@@ -10,4 +10,8 @@
 
 @interface ProductCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *price;
+@property (strong, nonatomic) IBOutlet UITextField *qta;
+
 @end
