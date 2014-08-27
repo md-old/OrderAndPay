@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACBC272619ADC9AD00A07990 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBC272519ADC9AD00A07990 /* Order.m */; };
 		ACD0BDCB19A8CE69003CC577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCA19A8CE69003CC577 /* Foundation.framework */; };
 		ACD0BDCD19A8CE69003CC577 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCC19A8CE69003CC577 /* CoreGraphics.framework */; };
 		ACD0BDCF19A8CE69003CC577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD0BDCE19A8CE69003CC577 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ACBC272419ADC9AD00A07990 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		ACBC272519ADC9AD00A07990 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		ACD0BDC719A8CE69003CC577 /* OrderAndPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderAndPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD0BDCA19A8CE69003CC577 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ACD0BDCC19A8CE69003CC577 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -180,6 +183,8 @@
 			children = (
 				ACD0BE0019A8CEDA003CC577 /* Product.h */,
 				ACD0BE0119A8CEDA003CC577 /* Product.m */,
+				ACBC272419ADC9AD00A07990 /* Order.h */,
+				ACBC272519ADC9AD00A07990 /* Order.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				ACD0BE1219A8E874003CC577 /* ProductDetailViewController.m in Sources */,
 				ACD7A02019AC8EB3004EECB5 /* MultipeerHandler.m in Sources */,
 				ACD0BE0C19A8E21B003CC577 /* ProductsViewController.m in Sources */,
+				ACBC272619ADC9AD00A07990 /* Order.m in Sources */,
 				ACD0BDD719A8CE69003CC577 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

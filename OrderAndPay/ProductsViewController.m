@@ -29,21 +29,7 @@
     return self;
 }
 
-/**
- *  Look for the POS
- *
- *  @param sender the id of the button
- */
-- (IBAction)searchForPOS:(id)sender {
-    if (self.delegate.mpHandler.session != nil) {
-        [self.delegate.mpHandler setupBrowser];
-        [self.delegate.mpHandler.browser setDelegate:self];
-        
-        [self presentViewController:self.delegate.mpHandler.browser
-                           animated:YES
-                         completion:nil];
-    }
-}
+
 
 - (void)viewDidLoad
 {
@@ -53,8 +39,25 @@
     [self.delegate.mpHandler setupPeerWithDisplayName:[UIDevice currentDevice].name];
     [self.delegate.mpHandler setupSession];
     
-    if ([self.delegate.products count] == 0) {
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([self.delegate.products count] != 0) {
         [self.tableView reloadData];
+    }
+    
+    if (!self.orderButton.enabled) {
+        if (self.delegate.mpHandler.session != nil) {
+            [self.delegate.mpHandler setupBrowser];
+            [self.delegate.mpHandler.browser setDelegate:self];
+            
+            [self presentViewController:self.delegate.mpHandler.browser
+                               animated:YES
+                             completion:nil];
+        }
     }
     
 }
@@ -63,6 +66,65 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/**
+ *  Update the order with the new item
+ *
+ *  @param sender the id of the textfield
+ */
+- (IBAction)updateOrder:(id)sender {
+    ProductCell *cell = (ProductCell*) [[[sender superview] superview] superview];
+    NSIndexPath *index = [self.tableView indexPathForCell:cell];
+    
+    // Get the new quantity
+    int qta = [cell.qta.text intValue];
+    // Retrieve the right product and see if it's already in the order
+    Product *p = [self.delegate.products objectAtIndex:index.row];
+    int result = [self.delegate.order verifyIfProductIsPresent:p.identifier];
+    
+    if (qta == 0) {
+        // If the product is in the order, delete it
+        if (result > -1) {
+            [self.delegate.order deleteProductWithId: p.identifier andPosition:result];
+        }
+    } else {
+        // If the product is in the order, update the quantity, else add a brand new product
+        if (result > -1) {
+            [self.delegate.order updateProductAtIndex: result withQuantity: qta];
+        } else {
+            [self.delegate.order.products addObject:p];
+            NSNumber *quantity = [[NSNumber alloc] initWithInt:qta];
+            [self.delegate.order.quantities addObject:quantity];
+        }
+    }
+    
+    self.totalPrice.text = [NSString stringWithFormat:@"%d", [self.delegate.order getTotalPrice]];
+    
+}
+
+/**
+ *  Send the current order to the POS
+ *
+ *  @param sender the id of the button
+ */
+- (IBAction)sendOrderToPOS:(id)sender {
+    NSString *message = [[NSString alloc] init];
+    NSString *alertType = [[NSString alloc] init];
+    if (![self.delegate sendOrder]) {
+        message = @"Something went wrong.";
+        alertType = @"Error";
+    } else {
+        message = @"Order sent!";
+        alertType = @"OK";
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertType
+                                                        message:message
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Got It", nil];
+    [alertView show];
 }
 
 #pragma mark - Table view data source
@@ -158,6 +220,7 @@
 
 - (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController {
     [self.delegate.mpHandler.browser dismissViewControllerAnimated:YES completion:nil];
+    self.orderButton.enabled = YES;
 }
 
 - (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController {

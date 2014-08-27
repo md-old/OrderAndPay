@@ -28,6 +28,8 @@
 {
     // Override point for customization after application launch.
     
+    self.order = [[Order alloc] init];
+    
     // Set the Multipeer Handler
     self.mpHandler = [[MultipeerHandler alloc] init];
     
@@ -198,6 +200,24 @@
         notification.soundName = @"Default";
         [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
     }
+}
+
+#pragma mark - Send Order
+
+- (BOOL) sendOrder
+{
+    //if ([self.order.products count] > 0) {
+        NSData *dataToBeSent = [NSKeyedArchiver archivedDataWithRootObject:self.order];
+        NSError *error = nil;
+    
+        if ([self.mpHandler.session sendData:dataToBeSent
+                            toPeers: [self.mpHandler.session connectedPeers]
+                           withMode:MCSessionSendDataUnreliable
+                              error:&error]) {
+            return YES;
+        }
+    //}
+    return NO;
 }
 
 @end

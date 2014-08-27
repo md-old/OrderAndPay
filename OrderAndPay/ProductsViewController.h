@@ -11,4 +11,7 @@
 
 @interface ProductsViewController : UITableViewController <MCBrowserViewControllerDelegate>
 
+@property (strong, nonatomic) IBOutlet UIButton *orderButton;
+@property (strong, nonatomic) IBOutlet UILabel *totalPrice;
+
 @end
