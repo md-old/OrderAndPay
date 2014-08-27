@@ -10,6 +10,7 @@
 
 @interface Order : NSObject <NSCoding>
 
+@property (strong, nonatomic) NSDate *arrivalTime;
 @property (strong, nonatomic) NSMutableArray *products;
 @property (strong, nonatomic) NSMutableArray *quantities;
 @property (strong, nonatomic) NSString *identifier;

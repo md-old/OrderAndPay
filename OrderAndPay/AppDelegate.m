@@ -94,7 +94,8 @@
     NSURLSessionTask *dataTask = [self.session dataTaskWithRequest:request
                                                  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                      self.content = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                                     [self saveDataAsJsonFile:data];
+                                                     //[self saveDataAsJsonFile:data];
+                                                     self.products = [self fetchProductsFromJson:data];
                                                  }];
     [dataTask resume];
 }
@@ -135,6 +136,20 @@
         [local addObject:element];
     }
     
+    return local;
+}
+
+- (NSArray*) fetchProductsFromJson: (NSData*) data
+{
+    NSError *error;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    
+    NSMutableArray *local = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *product in json) {
+        Product *element = [[Product alloc] initWithJSONDictionary:product];
+        [local addObject:element];
+    }
     return local;
 }
 
@@ -206,7 +221,8 @@
 
 - (BOOL) sendOrder
 {
-    //if ([self.order.products count] > 0) {
+    self.order.arrivalTime = [[NSDate alloc] init];
+    if ([self.order.products count] > 0) {
         NSData *dataToBeSent = [NSKeyedArchiver archivedDataWithRootObject:self.order];
         NSError *error = nil;
     
@@ -216,7 +232,7 @@
                               error:&error]) {
             return YES;
         }
-    //}
+    }
     return NO;
 }
 

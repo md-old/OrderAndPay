@@ -34,6 +34,7 @@
     self.identifier = [aDecoder decodeObjectForKey:@"identifier"];
     self.products = [aDecoder decodeObjectForKey:@"products"];
     self.quantities = [aDecoder decodeObjectForKey:@"quantities"];
+    self.arrivalTime = [aDecoder decodeObjectForKey:@"arrivalTime"];
     
     return self;
 }
@@ -43,6 +44,7 @@
     [aCoder encodeObject:self.identifier forKey:@"identifier"];
     [aCoder encodeObject:self.products forKey:@"products"];
     [aCoder encodeObject:self.quantities forKey:@"quantities"];
+    [aCoder encodeObject:self.arrivalTime forKey:@"arrivalTime"];
 }
 
 #pragma mark - Helper methods
