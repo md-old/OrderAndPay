@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *orderButton;
 @property (strong, nonatomic) IBOutlet UILabel *totalPrice;
+@property (strong, nonatomic) IBOutlet UILabel *finalLabel;
 
 @end

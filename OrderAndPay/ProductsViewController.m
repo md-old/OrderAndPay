@@ -8,6 +8,7 @@
 
 #import "ProductsViewController.h"
 #import "ProductDetailViewController.h"
+#import "PPViewController.h"
 #import "AppDelegate.h"
 #import "ProductCell.h"
 #import "Product.h"
@@ -29,8 +30,6 @@
     return self;
 }
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,7 +38,33 @@
     [self.delegate.mpHandler setupPeerWithDisplayName:[UIDevice currentDevice].name];
     [self.delegate.mpHandler setupSession];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(orderComplete:)
+                                                 name:@"OrderComplete"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(beginPayment:)
+                                                 name:@"BeginPayment"
+                                               object:nil];
+    
 }
+
+- (void) beginPayment: (NSNotification*) notification {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(resetOrder)
+                                                 name:@"PaymentFinished"
+                                               object:nil];
+    
+    [self performSegueWithIdentifier:@"BeginPayment" sender:self];
+}
+
+- (void) orderComplete:(NSNotification *) notification {
+    [self.delegate startRanging];
+    [self.tableView setUserInteractionEnabled: NO];
+    [self.orderButton setHidden:YES];
+    [self.finalLabel setHidden:NO];
+    }
 
 - (void) viewWillAppear:(BOOL)animated
 {
@@ -195,6 +220,19 @@
 }
 */
 
+
+#pragma mark - Helper Methods
+
+- (void) resetOrder
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"PaymentFinished" object:nil];
+    [self.delegate resetOrder];
+    self.totalPrice.text = @"0";
+    [self.finalLabel setHidden:YES];
+    [self.tableView setUserInteractionEnabled: YES];
+    [self.orderButton setHidden:NO];
+    [self.view reloadInputViews];
+}
 
 #pragma mark - Navigation
 

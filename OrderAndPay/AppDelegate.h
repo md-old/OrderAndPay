@@ -24,4 +24,14 @@
  */
 - (BOOL) sendOrder;
 
+/**
+ *  Start the ranging of the beacon
+ */
+- (void) startRanging;
+
+/**
+ *  Reset the current order
+ */
+- (void) resetOrder;
+
 @end

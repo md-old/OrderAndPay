@@ -19,6 +19,7 @@
         self.identifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
         self.products = [[NSMutableArray alloc] init];
         self.quantities = [[NSMutableArray alloc] init];
+        self.status = @"open";
     }
     
     return self;
@@ -35,6 +36,7 @@
     self.products = [aDecoder decodeObjectForKey:@"products"];
     self.quantities = [aDecoder decodeObjectForKey:@"quantities"];
     self.arrivalTime = [aDecoder decodeObjectForKey:@"arrivalTime"];
+    self.status = [aDecoder decodeObjectForKey:@"status"];
     
     return self;
 }
@@ -45,6 +47,7 @@
     [aCoder encodeObject:self.products forKey:@"products"];
     [aCoder encodeObject:self.quantities forKey:@"quantities"];
     [aCoder encodeObject:self.arrivalTime forKey:@"arrivalTime"];
+    [aCoder encodeObject:self.status forKey:@"status"];
 }
 
 #pragma mark - Helper methods

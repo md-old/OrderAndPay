@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSMutableArray *products;
 @property (strong, nonatomic) NSMutableArray *quantities;
 @property (strong, nonatomic) NSString *identifier;
+@property (strong, nonatomic) NSString *status;
 
 /**
  *  Given the identifier of a product, verify if is already present in the array. If yes, its position is returned, if not, -1 is the result.

@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrderAndPay/ProductsViewController.m"
-            timestampString = "430840471.185871"
+            filePath = "OrderAndPay/AppDelegate.m"
+            timestampString = "431017651.64477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "-startMonitoringForBeacon:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrderAndPay/ProductsViewController.m"
-            timestampString = "430840663.313389"
+            filePath = "OrderAndPay/AppDelegate.m"
+            timestampString = "431017651.64477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "-locationManager:didEnterRegion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrderAndPay/ProductsViewController.m"
-            timestampString = "430840664.775317"
+            filePath = "OrderAndPay/AppDelegate.m"
+            timestampString = "431017963.029634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "-startRanging"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderAndPay/AppDelegate.m"
+            timestampString = "431017651.64477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "-locationManager:didRangeBeacons:inRegion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPViewController.m"
+            timestampString = "431017778.135721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-payPalPaymentViewController:didCompletePayment:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

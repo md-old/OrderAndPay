@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Product.h"
+#import "PayPalMobile.h"
 @import CoreLocation;
 
 @interface AppDelegate () <CLLocationManagerDelegate>
@@ -19,6 +20,8 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableArray *regions;
 
+@property (strong, nonatomic) UITabBarController *tabBarController;
+
 
 @end
 
@@ -28,7 +31,11 @@
 {
     // Override point for customization after application launch.
     
+    // Init PP environment
+    [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentSandbox : @"AQxbiBA8xPLwRyojTbmAK00nCuYtLrU1AWSLvY3qg2XQQ7mza72tFP-xuP1S"}];
+    
     self.order = [[Order alloc] init];
+    self.tabBarController = (UITabBarController*)self.window.rootViewController;
     
     // Set the Multipeer Handler
     self.mpHandler = [[MultipeerHandler alloc] init];
@@ -217,6 +224,17 @@
     }
 }
 
+- (void) locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+{
+    CLBeacon *beacon = [[CLBeacon alloc] init];
+    beacon = [beacons lastObject];
+    
+    if (beacon.proximity == CLProximityImmediate && beacon.accuracy < 0.025) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"BeginPayment" object:self];
+        [self.locationManager stopRangingBeaconsInRegion:region];
+    }
+}
+
 #pragma mark - Send Order
 
 - (BOOL) sendOrder
@@ -234,6 +252,20 @@
         }
     }
     return NO;
+}
+
+- (void) startRanging
+{
+    [self.locationManager startRangingBeaconsInRegion:[self.regions objectAtIndex:0]];
+    NSLog(@"RANGING");
+}
+
+#pragma mark - Helper Methods
+
+- (void) resetOrder
+{
+    NSLog(@"RESET ORDER");
+    self.order = [[Order alloc] init];
 }
 
 @end

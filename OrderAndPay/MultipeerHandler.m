@@ -33,7 +33,8 @@ NSString *const kServiceType = @"pb-posemitter";
 }
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {
-    
+    NSLog(@"HERE");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"OrderComplete" object:self];
 }
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress {
