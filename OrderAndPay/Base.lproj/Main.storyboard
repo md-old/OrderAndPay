@@ -239,10 +239,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="v9v-CE-ef9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5Z-AB-gxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1416" y="1346"/>
+            <point key="canvasLocation" x="1416" y="1178"/>
         </scene>
         <!--Navigation Controller - Products-->
         <scene sceneID="X5I-4K-l31">

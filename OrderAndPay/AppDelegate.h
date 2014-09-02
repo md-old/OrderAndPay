@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MultipeerHandler.h"
 #import "Order.h"
+#import "Confirmation.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) NSArray *products;
 @property (strong, nonatomic) MultipeerHandler *mpHandler;
 @property (strong, nonatomic) Order *order;
+@property (strong, nonatomic) Confirmation *confirmation;
 
 /**
  *  Send the order to the POS.
@@ -34,4 +36,10 @@
  */
 - (void) resetOrder;
 
+/**
+ *  Send the confirmation of the payment to the POS
+ *
+ *  @return YES if it goes fine, NO otherwise
+ */
+- (BOOL) sendCheckPayment;
 @end

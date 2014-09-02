@@ -225,6 +225,7 @@
 
 - (void) resetOrder
 {
+    [self.delegate sendCheckPayment];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"PaymentFinished" object:nil];
     [self.delegate resetOrder];
     self.totalPrice.text = @"0";
@@ -251,6 +252,15 @@
         
         detailViewController.nameP = prod.name;
         detailViewController.descP = prod.description;
+    }
+    else if ([[segue identifier] isEqualToString:@"BeginPayment"]) {
+        PPViewController *ppViewController = [segue destinationViewController];
+        
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        
+        ppViewController.amount = [f numberFromString: self.totalPrice.text];
+        
     }
 }
 

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PayPalMobile.h"
 
-@interface PPViewController : UIViewController <PayPalFuturePaymentDelegate>
+@interface PPViewController : UIViewController <PayPalFuturePaymentDelegate, NSURLConnectionDelegate>
+
+@property (strong, nonatomic) NSNumber *amount;
 
 @end

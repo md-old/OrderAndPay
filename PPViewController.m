@@ -7,10 +7,12 @@
 //
 
 #import "PPViewController.h"
+#import "AppDelegate.h"
 
 @interface PPViewController ()
 
 @property (strong, nonatomic, readwrite) PayPalConfiguration *payPalConfiguration;
+@property (strong, nonatomic) AppDelegate *delegate;
 
 @end
 
@@ -38,6 +40,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,9 +60,10 @@
 - (IBAction)pay:(id)sender {
     PayPalPayment *payment = [[PayPalPayment alloc] init];
     
-    payment.amount = [[NSDecimalNumber alloc] initWithString:@"2"];
+    NSString *amount = [[NSString alloc] initWithFormat:@"%@", self.amount];
+    payment.amount = [[NSDecimalNumber alloc] initWithString: amount];
     payment.currencyCode = @"USD";
-    payment.shortDescription = @"A description";
+    payment.shortDescription = @"Thanks for buying.";
     
     payment.intent = PayPalPaymentIntentSale;
     
@@ -122,18 +127,37 @@
 
 - (void) verifyCompletedPayment: (PayPalPayment*) completedPayment
 {
-    // Send the entire confirmation dictionary
-    NSData *confirmation = [NSJSONSerialization dataWithJSONObject:completedPayment.confirmation
-                                                           options:0
-                                                             error:nil];
+    NSDictionary *response = [completedPayment.confirmation objectForKey:@"response"];
+    NSString *identifier = [response valueForKey:@"id"];
     
-    // Send confirmation to your server; your server should verify the proof of payment
-    // and give the user their goods or services. If the server is not reachable, save
-    // the confirmation and try again later.
+    // Set the payment ID in the delegate for the following check from the server
+    self.delegate.confirmation.paymentId = [identifier copy];
+    
+    NSURL *url = [NSURL URLWithString:@"http://beaconservice.herokuapp.com/SavePayment"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    NSString *messageBody = [NSString stringWithFormat:@"data=%@", identifier];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody:[messageBody dataUsingEncoding:NSUTF8StringEncoding]];
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
 }
 
 - (void) payPalFuturePaymentDidCancel:(PayPalFuturePaymentViewController *)futurePaymentViewController {}
 - (void) payPalFuturePaymentViewController:(PayPalFuturePaymentViewController *)futurePaymentViewController didAuthorizeFuturePayment:(NSDictionary *)futurePaymentAuthorization {}
+
+#pragma mark - Connection Delegate
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+   
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    
+}
 
 /*
 #pragma mark - Navigation

@@ -35,6 +35,7 @@
     [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentSandbox : @"AQxbiBA8xPLwRyojTbmAK00nCuYtLrU1AWSLvY3qg2XQQ7mza72tFP-xuP1S"}];
     
     self.order = [[Order alloc] init];
+    self.confirmation = [[Confirmation alloc] init];
     self.tabBarController = (UITabBarController*)self.window.rootViewController;
     
     // Set the Multipeer Handler
@@ -235,6 +236,12 @@
     }
 }
 
+- (void) startRanging
+{
+    [self.locationManager startRangingBeaconsInRegion:[self.regions objectAtIndex:0]];
+    NSLog(@"RANGING");
+}
+
 #pragma mark - Send Order
 
 - (BOOL) sendOrder
@@ -254,17 +261,27 @@
     return NO;
 }
 
-- (void) startRanging
+- (BOOL) sendCheckPayment
 {
-    [self.locationManager startRangingBeaconsInRegion:[self.regions objectAtIndex:0]];
-    NSLog(@"RANGING");
+    NSData *dataToBeSent = [NSKeyedArchiver archivedDataWithRootObject:self.confirmation];
+    NSError *error = nil;
+    
+    if ([self.mpHandler.session sendData:dataToBeSent
+                                 toPeers: [self.mpHandler.session connectedPeers]
+                                withMode:MCSessionSendDataUnreliable
+                                   error:&error]) {
+        NSLog(@"Check sent");
+        return YES;
+    }
+    NSLog(@"Check not sent");
+    return NO;
 }
+
 
 #pragma mark - Helper Methods
 
 - (void) resetOrder
 {
-    NSLog(@"RESET ORDER");
     self.order = [[Order alloc] init];
 }
 
